@@ -16,8 +16,8 @@ nav {
   justify-content:space-evenly;
   font-size: 2.5rem;
   background-color: #FA7070;
-  height: 7rem;
-  padding-top: 20px;
+  height: 10vh;
+  padding-top: 8px;
 }
 
 nav > a {
@@ -145,13 +145,12 @@ nav > a {
   text-align: center;
 }
 #contact > div > h2 {
-  font-size: 5rem;
   color: #333;
   margin-bottom: 30px;
 }
 #contact > div > p {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.3rem;
   margin: 0;
   margin-bottom: 50px;
 }
@@ -166,7 +165,7 @@ form {
   margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 1.2rem;
   width: 60%;
 }
 .message-field {
@@ -288,11 +287,11 @@ footer > p {
   }
 
   #contact > div > h2 {
-    font-size: 11vw;
+    font-size: 10vw;
   }
 
   #contact > div > p {
-    font-size: 2rem;
+    font-size: 1.7rem;
     margin-bottom: 30px;
   }
 
@@ -303,7 +302,7 @@ footer > p {
   .input-field {
     width: 80%;
     margin: 10px;
-    font-size: 2rem;
+    font-size: 1.2rem;
   }
 
   .message-field {
