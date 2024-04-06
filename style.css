@@ -69,11 +69,12 @@ nav > a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   font-size: 2.5rem;
   margin-left: 50px;
   margin-right: 50px;
   background-color: #C6EBC5;
-  padding: 30px;
+  padding: 25px;
   margin-bottom: 50px;
 }
 .cat-meme {
@@ -233,26 +234,39 @@ footer > p {
   /*-------About section----------*/
   #despre {
     margin: 0;
-    font-size: 4vw;
+  }
+  #despre h2:first-child {
+    font-size: 4rem;
+  }
+  #despre p {
+    font-size: 1.5rem;
   }
   .cat-meme {
     display: flex;
     align-items: center;
     justify-content: center;
     float: none;
+    margin: 0;
   }
   .cat-meme img {
+    margin: 0;
     transition: none;
-    height: 450px;
+    width: 80%;
   }
   .cat-meme:hover img { /*elimin animatia*/
-    transform: none;
+    transition: none;
   }
   /*-------Galeria de poze----------*/
   .photo-container {
     flex-direction: column;
     height: auto;
     gap: 20px;
+  }
+  #gallery h2 {
+    font-size: 4rem;
+  }
+  #gallery p {
+    font-size: 2rem
   }
 
   .link-photo {
@@ -297,8 +311,8 @@ footer > p {
   }
 
   .submit-button {
-    font-size: 3rem;
-    padding: 30px;
+    font-size: 2rem;
+    padding: 20px;
     border-radius: 20px;
   }
   /*-------Footer section----------*/
