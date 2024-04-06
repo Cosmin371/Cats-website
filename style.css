@@ -9,8 +9,9 @@ body {
   align-items: center;
   justify-content:space-evenly;
   font-size: 2.5rem;
-  background-color: #8d8c8c;
+  background-color: #FA7070;
   height: 7rem;
+  padding-top: 20px;
 }
 
 nav > a {
@@ -58,7 +59,13 @@ body > p {
   margin: 10px;
 }
 
-#galerie-poze {
+#galerie > p {
+  font-size: 2rem;
+  text-align: center;
+  margin: 15px;
+}
+
+.container-poze {
   display: flex;
   align-items: center;
   max-width: 100%;
@@ -91,7 +98,26 @@ body > p {
   flex: 2; 
 }
 
-footer {
+#contact > div > h2 {
+  margin: 25px;
+
+}
+#contact > div > p {
+  text-align: center;
+  font-size: 2rem;
+  margin: 0;
+}
+#contact > div > form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
+footer {  
   background-color: #114232;
   padding: 20px 0px;
   color: #FFFFEC;
@@ -101,4 +127,62 @@ footer {
 }
 footer > p {
   margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+  }
+
+  .header-container a {
+    margin: 10px;
+  }
+
+  #hero {
+    font-size: 24px;
+  }
+
+  #despre {
+    font-size: 2rem;
+  }
+  #despre > div > p{
+    margin: 0;
+  }
+  #despre > div > p > img {
+    height: 400px;
+    width: 400px;
+    margin-bottom: 25px;
+  }
+  .container-poze {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .linkPoza {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pozaGalerie {
+    height: auto;
+    width: 100%;
+  }
+
+  .linkPoza > p {
+    position: static;
+    margin-top: 10px;
+  }
+
+  #contact > div > form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer {
+    font-size: 1rem;
+  }
 }
