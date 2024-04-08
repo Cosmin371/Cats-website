@@ -3,6 +3,7 @@ body {
   background-color: #FEFDED;
   margin: 0;
   font-family: "Galada", cursive;
+  overflow-x: hidden;
 }
 h2 {
   font-size: 6rem;
@@ -138,7 +139,7 @@ nav > a {
   transition: transform 1s ease;
 }
 .cat-meme:hover img {
-  transform: rotate(720deg);
+  transform: rotate(720deg) scale(0.7);
 }
 #despre p {
   font-family: Arial, Helvetica, sans-serif;
@@ -179,7 +180,7 @@ nav > a {
   object-fit: cover;
 }
 .link-photo:hover {
-  flex: 2; 
+  flex: 2;
 }
 /*--------------------------------------*/
 #contact {
@@ -250,6 +251,37 @@ form {
   object-fit: fill;
 }
 
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+    height: 300px;
+    width: 300px;
+  }
+  25% {
+    transform: translateX(-100%);
+    height: 200px;
+    width: 200px;
+  }
+  50% {
+    transform: translateX(0);
+    height: 300px;
+    width: 300px;
+  }
+  75% {
+    transform: translateX(100%);
+    height: 200px;
+    width: 200px;
+  }
+  100% {
+    transform: translateX(0);
+    height: 300px;
+    width: 300px;
+  }
+}
+
+.photo-item {
+  animation: slide 5s ease infinite;
+}
 
 /*--------------------------------------*/
 footer {  
@@ -392,6 +424,7 @@ footer > p {
   .photo-item {
     width: 250px;
     height: 250px;
+    animation: none;
   }
   /*-------Footer section----------*/
   footer {
