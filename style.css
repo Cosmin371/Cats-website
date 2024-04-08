@@ -24,6 +24,58 @@ nav > a {
   text-decoration: none;
   color: #FEFDED;
 }
+
+/* Add this CSS for the dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.drop {
+  background-color: #FA7070;
+  color: white;
+  font-size: 2.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #FA7070;
+  min-width: 260px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 40px;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 0;
+  text-decoration: none;
+  display: block;
+  font-size: 40px;
+  text-align: center;
+}
+
+.dropdown-content a:hover {
+  background-color: #FEFDED;
+  color: #FA7070;
+  border-radius: 40px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .drop {
+  padding: 5px 10px;
+  background-color: #FEFDED;
+  color: #FA7070;
+  border-radius: 30px;
+}
 /*--------------------------------------*/
 #hero {
   font-size: 30px;
