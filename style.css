@@ -237,6 +237,21 @@ form {
   background-color: #555;
 }
 /*--------------------------------------*/
+#photo-grid {
+  margin: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Automatically fit as many photos as possible with minimum width of 200px */
+  gap: 20px; /* Spacing between grid items */
+}
+
+.photo-item {
+  width: 300px;
+  height: 300px;
+  object-fit: fill;
+}
+
+
+/*--------------------------------------*/
 footer {  
   background-color: #114232;
   padding: 20px 0px;
@@ -259,7 +274,10 @@ footer > p {
     height: auto;
     align-items: center;
   }
-  nav > * {
+  nav > a {
+    display: none;
+  }
+  .dropdown {
     display: none;
   }
   .logo {
@@ -365,6 +383,15 @@ footer > p {
     font-size: 2rem;
     padding: 20px;
     border-radius: 20px;
+  }
+  /*--------photo grid-------------*/
+  #photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap:10px;
+  }
+  .photo-item {
+    width: 250px;
+    height: 250px;
   }
   /*-------Footer section----------*/
   footer {
