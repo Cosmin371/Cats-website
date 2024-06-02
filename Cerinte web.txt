@@ -1,0 +1,29 @@
+A. JavaScript
+
+/////fișier separat pentru codul JavaScript
+/////modificarea stilului unui element sau al unui grup de elemente
+/////manipularea DOM-ului (selectare după id, tag, clasă, folosind selectori CSS)
+/////crearea și stergerea de elemente HTML
+/////folosirea și modificarea evenimentelor generate de mouse si tastatură
+/////modificare de proprietăți
+/////folosirea localStorage (să se pastreze în localStorage o colecție de elemente)
+////schimbarea aleatoare a valorilor unei proprietăți (de exemplu: culoare, dimensiuni, poziție)
+////folosirea setTimeout sau setInterval
+////folosirea proprietăților classList, target sau currentTarget
+
+////inputuri funcționale (de exemplu: input de tip text/range/number/radio/checkbox, select, textarea)
+
+folosirea a cel puțin unei metode din clasele: Math, Array, String, Date
+    ---------------------------- am folosit din math, array,
+    -- mai am STRING, DATE
+
+folosirea metodelor getComputedStyle, stopPropagation
+
+validarea datelor dintr-un formular folosind expresii regulate
+
+B. AJAX & Node.js
+
+/////cereri get/post: preluare date dintr-un formular
+/////cereri Ajax cu preluare date dintr-un fișier json
+sesiuni: login/logout (cu Node.js sau Storage)
+pagină pentru eroarea 404
