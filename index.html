@@ -117,17 +117,24 @@
   <!-- Contact Section -->
   <section id="contact">
     <div class="contact-container">
-      <h2>Contacteaza-ne</h2>
-      <p>Daca iti place aceasta pagina, poti contribui adaugand poze cu pisica ta în colectia noastra! Contacteaza-ne pe email!</p>
-      <form id="contact-form">
-        <input class="input-field" type="text" name="name" placeholder="Numele tău" required>
-        <input class="input-field" type="email" name="email" placeholder="Email-ul" required>
-        <textarea class="input-field message-field" name="message" placeholder="Mesajul tău" required></textarea>
-        <button class="submit-button" type="submit">Trimite mesajul</button>
-      </form>
-      <div id="response-message"></div>
+        <h2>Contacteaza-ne</h2>
+        <p>Daca iti place aceasta pagina, poti contribui adaugand poze cu pisica ta în colectia noastra! Contacteaza-ne pe email!</p>
+        <form id="contact-form">
+            <input id="name" class="input-field" type="text" name="name" placeholder="Numele tău" required>
+            <span id="name-error" class="error-message"></span>
+            
+            <input id="email" class="input-field" type="email" name="email" placeholder="Email-ul" required>
+            <span id="email-error" class="error-message"></span>
+            
+            <textarea id="message" class="input-field message-field" name="message" placeholder="Mesajul tău" required></textarea>
+            <span id="message-error" class="error-message"></span>
+            
+            <button class="submit-button" type="submit">Trimite mesajul</button>
+        </form>
+        <div id="response-message"></div>
     </div>
-  </section>
+</section>
+
   
 
   <!-- Footer Section -->

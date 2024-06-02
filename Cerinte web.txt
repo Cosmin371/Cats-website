@@ -10,20 +10,15 @@ A. JavaScript
 ////schimbarea aleatoare a valorilor unei proprietăți (de exemplu: culoare, dimensiuni, poziție)
 ////folosirea setTimeout sau setInterval
 ////folosirea proprietăților classList, target sau currentTarget
-
+////validarea datelor dintr-un formular folosind expresii regulate
 ////inputuri funcționale (de exemplu: input de tip text/range/number/radio/checkbox, select, textarea)
 
-folosirea a cel puțin unei metode din clasele: Math, Array, String, Date
-    ---------------------------- am folosit din math, array,
+folosirea a cel puțin unei metode din clasele:
     -- mai am STRING, DATE
 
-folosirea metodelor getComputedStyle, stopPropagation
-
-validarea datelor dintr-un formular folosind expresii regulate
-
-B. AJAX & Node.js
+folosirea metodelor stopPropagation
+sesiuni: login/logout (cu Node.js sau Storage)
 
 /////cereri get/post: preluare date dintr-un formular
 /////cereri Ajax cu preluare date dintr-un fișier json
-sesiuni: login/logout (cu Node.js sau Storage)
-pagină pentru eroarea 404
+////pagină pentru eroarea 404

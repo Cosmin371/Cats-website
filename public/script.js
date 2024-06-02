@@ -125,11 +125,53 @@ document.addEventListener('DOMContentLoaded', () => {
   const contactForm = document.getElementById('contact-form');
   const responseMessage = document.getElementById('response-message');
 
+  // Expresii regulate pentru validarea inputului
+  const nameRegex = /^[a-zA-Z ]{2,30}$/; // Acceptă litere și spații, între 2 și 30 de caractere
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Validare simplă pentru email
+
   contactForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
-    const formData = new FormData(contactForm);
-    const formObject = Object.fromEntries(formData);
+    // Obținem referințele la elemente
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+
+    // Verificăm dacă elementele există în DOM
+    if (!nameInput || !emailInput || !messageInput) {
+      console.error('Form elements not found!');
+      return;
+    }
+
+    // Obținem valorile și le validăm
+    const nameValue = nameInput.value.trim();
+    const emailValue = emailInput.value.trim();
+    const messageValue = messageInput.value.trim();
+
+    // Resetăm mesajele de eroare
+    document.getElementById('name-error').textContent = '';
+    document.getElementById('email-error').textContent = '';
+    document.getElementById('message-error').textContent = '';
+
+    // Validare nume
+    if (!nameRegex.test(nameValue)) {
+      document.getElementById('name-error').textContent = 'Numele trebuie să conțină doar litere și să aibă între 2 și 30 de caractere.';
+      return;
+    }
+
+    // Validare email
+    if (!emailRegex.test(emailValue)) {
+      document.getElementById('email-error').textContent = 'Introduceți o adresă de email validă.';
+      return;
+    }
+
+    // Validare mesaj
+    if (messageValue.length === 0) {
+      document.getElementById('message-error').textContent = 'Introduceți un mesaj.';
+      return;
+    }
+
+    const formObject = { name: nameValue, email: emailValue, message: messageValue };
 
     try {
       const response = await fetch('/contact', {
