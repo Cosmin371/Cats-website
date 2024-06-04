@@ -13,21 +13,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Serve static files (like HTML, CSS, JS)
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname + '/public'));
 
 // Serve images
-app.use('/images', express.static(path.join(__dirname, 'images')));
+app.use('/images', express.static(__dirname + '/images'));
+
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, '/index.html'));
+  res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
-
-// POST endpoint for /contact
 app.post('/contact', (req, res) => {
-  const { name, email, message } = req.body;
-
-  // Save data to data.json file
-  const newData = { name, email, message };
+  const {name, email, message} = req.body;
+  const newData = {name, email, message};
   const data = JSON.parse(fs.readFileSync('data.json'));
   data.push(newData);
 
@@ -39,7 +36,7 @@ app.post('/contact', (req, res) => {
 
 // Handle 404 errors
 app.use((req, res) => {
-  res.status(404).sendFile(path.join(__dirname, '404.html'));
+  res.status(404).sendFile(__dirname + '/public/404.html');
 });
 
 // Listen on the defined port
