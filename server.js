@@ -12,14 +12,16 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Serve static files (like HTML, CSS, JS)
 app.use(express.static(__dirname + '/public'));
 
-// Serve images
 app.use('/images', express.static(__dirname + '/images'));
 
-app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname + '/public/index.html'));
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html');
+});
+
+app.get('/login', (req, res) => {
+  res.sendFile(__dirname + '/public/login.html');
 });
 
 app.post('/contact', (req, res) => {
@@ -34,12 +36,31 @@ app.post('/contact', (req, res) => {
   res.json({ message: 'Mesajul a fost primit' });
 });
 
-// Handle 404 errors
+app.post('/admin', (req, res) => {
+  const loginInfo = req.body;
+  const data = JSON.parse(fs.readFileSync("admins.json"));
+  
+  let access = false;
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].username === loginInfo.username && data[i].password === loginInfo.password) {
+      access = true;
+      res.sendFile(__dirname + '/public/dashboard.html');
+    }
+  }
+  if (!access)
+    res.json(__dirname + '/public/login.html');
+});
+
+app.get('/data', (req, res) => {
+  res.json(JSON.parse(fs.readFileSync('data.json')));
+})
+
+/// pagina 404
 app.use((req, res) => {
   res.status(404).sendFile(__dirname + '/public/404.html');
 });
 
-// Listen on the defined port
+/// deschidere server
 app.listen(port, () => {
   console.log(`Serverul rulează la adresa http://localhost:${port}`);
 });

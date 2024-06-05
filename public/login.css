@@ -1,0 +1,94 @@
+body {
+  background-color: #FEFDED;
+  margin: 0;
+  font-family: "Galada", cursive;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+  animation: bounceIn 1s;
+}
+
+.login-container h2 {
+  margin: 0 0 15px;
+  color: #FA7070;
+  font-size: 3rem;
+}
+
+.login-container label {
+  display: block;
+  margin: 10px 0 5px;
+  color: #FA7070;
+  font-weight: bold;
+}
+
+.login-container input {
+  width: 94%;
+  padding: 10px;
+  margin: 5px 0 15px;
+  border: 2px solid #FA7070;
+  border-radius: 25px;
+  outline: none;
+  transition: border-color 0.3s;
+  font-size: 1rem;
+}
+
+.login-container input:focus {
+  border-color: #FF4500;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #FA7070;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 1.2rem;
+}
+
+.login-container button:hover {
+  background-color: #FF4500;
+}
+
+@keyframes bounceIn {
+  0% {
+      transform: scale(0.9);
+      opacity: 0.7;
+  }
+  50% {
+      transform: scale(1.1);
+      opacity: 1;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .login-container {
+      width: 80%;
+      padding: 10px;
+  }
+
+  .login-container h2 {
+      font-size: 2rem;
+  }
+
+  .login-container input, .login-container button {
+      font-size: 1rem;
+  }
+}

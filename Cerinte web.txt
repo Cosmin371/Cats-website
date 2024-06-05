@@ -17,8 +17,7 @@ folosirea a cel puțin unei metode din clasele:
     -- mai am STRING, DATE
 
 folosirea metodelor stopPropagation
-sesiuni: login/logout (cu Node.js sau Storage)
-
+///sesiuni: login/logout (cu Node.js sau Storage)
 /////cereri get/post: preluare date dintr-un formular
 /////cereri Ajax cu preluare date dintr-un fișier json
 ////pagină pentru eroarea 404
