@@ -4,36 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Display JSON Data</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #FEFDED;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            color: #FA7070;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        th, td {
-            padding: 10px;
-            border: 1px solid #ccc;
-            text-align: left;
-        }
-        th {
-            background-color: #FA7070;
-            color: #FEFDED;
-        }
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-    </style>
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
 
@@ -52,35 +23,7 @@
     </tbody>
 </table>
 
-<script>
-    // Fetch data from JSON file
-    fetch('/data')
-        .then(response => response.json())
-        .then(data => {
-            const tableBody = document.getElementById('data-table-body');
-            
-            data.forEach(item => {
-                const row = document.createElement('tr');
-                
-                const nameCell = document.createElement('td');
-                nameCell.textContent = item.name;
-                row.appendChild(nameCell);
-                
-                const emailCell = document.createElement('td');
-                emailCell.textContent = item.email;
-                row.appendChild(emailCell);
-                
-                const messageCell = document.createElement('td');
-                messageCell.textContent = item.message;
-                row.appendChild(messageCell);
-                
-                tableBody.appendChild(row);
-            });
-        })
-        .catch(error => {
-            console.log('Error fetching data:', error);
-        });
-</script>
+<script src="dashboard.js"></script>
 
 </body>
 </html>

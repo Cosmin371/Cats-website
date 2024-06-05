@@ -3,10 +3,15 @@ const tasksBlock = document.querySelector('.js-tasks');
 const addButton = document.querySelector('.js-add-button');
 const todoSection = document.getElementById('to-do');
 const taskList = JSON.parse(localStorage.getItem('taskList')) || [];
+const inputButtonBundle = document.getElementById('input-button-bundle');
+const todoh1 = document.getElementById('to-do-h1');
 
-renderTasks();
+todoSection.style.padding = '30px';
+todoh1.style.fontSize = '2.5rem';
+todoh1.style.textAlign = 'center';
+todoh1.style.margin = '0';
 
-/// adauga task nou
+// Function to add a new task
 function addTask() {
     if (inputElement.value) {
         taskList.push({
@@ -20,7 +25,7 @@ function addTask() {
     }
 }
 
-/// afisare taskuri
+// Function to render tasks
 function renderTasks() {
     tasksBlock.innerHTML = '';
     taskList.forEach((task, i) => {
@@ -54,24 +59,78 @@ function renderTasks() {
         taskElement.appendChild(taskName);
         taskElement.appendChild(deleteButton);
         tasksBlock.appendChild(taskElement);
+
+        // Apply styles
+        taskElement.style.display = 'flex';
+        taskElement.style.alignItems = 'center';
+        taskElement.style.padding = '10px';
+        taskElement.style.border = '1px solid #ccc';
+        taskElement.style.borderRadius = '10px';
+        taskElement.style.marginBottom = '10px';
+        taskElement.style.backgroundColor = '#fff';
+
+        checkbox.style.marginRight = '15px';
+
+        taskName.style.flex = '1';
+        taskName.style.fontSize = '1.2rem';
+
+        deleteButton.style.padding = '5px 10px';
+        deleteButton.style.backgroundColor = '#ff4c4c';
+        deleteButton.style.color = '#fff';
+        deleteButton.style.border = 'none';
+        deleteButton.style.borderRadius = '5px';
+        deleteButton.style.cursor = 'pointer';
+        deleteButton.style.transition = 'background-color 0.3s ease';
+        deleteButton.addEventListener('mouseenter', () => {
+            deleteButton.style.backgroundColor = '#ff1c1c';
+        });
+        deleteButton.addEventListener('mouseleave', () => {
+            deleteButton.style.backgroundColor = '#ff4c4c';
+        });
     });
 }
 
-/// stil input box
-inputElement.style.padding = '10px';
-inputElement.style.marginBottom = '20px';
-inputElement.style.border = '1px solid #ccc';
-inputElement.style.borderRadius = '5px';
-inputElement.style.fontSize = '1.2rem';
-inputElement.style.width = '60%';
+inputButtonBundle.style.display = 'flex';
+inputButtonBundle.style.alignItems = 'center';
+inputButtonBundle.style.justifyContent = 'center';
+inputButtonBundle.style.gap = '10px';
+inputButtonBundle.style.marginBottom = '25px';
+
+// Apply styles to input box
+inputElement.style.padding = '15px';
+inputElement.style.border = '2px solid #cccccc';
+inputElement.style.borderRadius = '10px';
+inputElement.style.fontSize = '1.5rem';
+inputElement.style.width = '100%';
+
+// Apply styles to add button
+addButton.style.padding = '15px 25px';
+addButton.style.width = '20%';
+addButton.style.backgroundColor = '#333';
+addButton.style.color = '#fff';
+addButton.style.border = 'none';
+addButton.style.borderRadius = '10px';
+addButton.style.fontSize = '1.5rem';
+addButton.style.cursor = 'pointer';
+addButton.style.transition = 'background-color 0.3s ease';
+addButton.addEventListener('mouseenter', () => {
+    addButton.style.backgroundColor = '#555';
+});
+addButton.addEventListener('mouseleave', () => {
+    addButton.style.backgroundColor = '#333';
+});
+
+// Initial render
+renderTasks();
+
+// Event listener for add button
+addButton.addEventListener('click', addTask);
 
 inputElement.addEventListener('keydown', function(event) {
   if (event.key === 'Enter') {
     addTask();
   }
 });
-
-addButton.addEventListener('click', addTask(event));
 
 /// schimbare background random cu setTimeOut
 const colors = [
@@ -126,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const responseMessage = document.getElementById('response-message');
 
   // Expresii regulate pentru validarea inputului
-  const nameRegex = /^[a-zA-Z ]{2,30}$/; // Acceptă litere și spații, între 2 și 30 de caractere
+  const nameRegex = /^[a-zA-ZșțăîâȘȚĂÎÂ \-]{2,30}$/;
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Validare simplă pentru email
 
   contactForm.addEventListener('submit', async (event) => {
@@ -155,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Validare nume
     if (!nameRegex.test(nameValue)) {
-      document.getElementById('name-error').textContent = 'Numele trebuie să conțină doar litere și să aibă între 2 și 30 de caractere.';
+      document.getElementById('name-error').textContent = 'Numele poate să conțină doar litere românești, liniuta "-" și să aibă între 2 și 30 de caractere.';
       return;
     }
 
@@ -195,4 +254,5 @@ document.addEventListener('DOMContentLoaded', () => {
       responseMessage.style.color = 'red';
     }
   });
+  
 });

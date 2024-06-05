@@ -308,6 +308,7 @@ footer {
 footer > p {
   margin: 0;
 }
+
 /*--------------------------------------*/
 /* Mobile version */
 @media screen and (max-width: 768px) {
@@ -445,3 +446,4 @@ footer > p {
     font-size: 1.3rem;
   }
 }
+

@@ -8,5 +8,20 @@
     "name": "salut",
     "email": "glod.cosmin@gmail.com",
     "message": "sdfsdfg"
+  },
+  {
+    "name": "Cosmin",
+    "email": "cosmin-stefan.glod@s.unibuc.ro",
+    "message": "salut, acesta este un mesaj"
+  },
+  {
+    "name": "Andrei",
+    "email": "andrei@gmail.com",
+    "message": "Buna, imi place mult acest site"
+  },
+  {
+    "name": "Glod Cosmin-Ștefan",
+    "email": "cosmin-stefan.glod@s.unibuc.ro",
+    "message": "Imi ador site-ul, poate nu e mult, dar chiar m-am chinuit si imi place rezultatul final !"
   }
 ]
