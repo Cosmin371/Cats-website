@@ -12,10 +12,6 @@ A. JavaScript
 ////folosirea proprietăților classList, target sau currentTarget
 ////validarea datelor dintr-un formular folosind expresii regulate
 ////inputuri funcționale (de exemplu: input de tip text/range/number/radio/checkbox, select, textarea)
-
-folosirea a cel puțin unei metode din clasele:
-    -- mai am STRING, DATE
-
 folosirea metodelor stopPropagation
 ///sesiuni: login/logout (cu Node.js sau Storage)
 /////cereri get/post: preluare date dintr-un formular

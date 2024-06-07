@@ -4,7 +4,7 @@ const addButton = document.querySelector('.js-add-button');
 const todoSection = document.getElementById('to-do');
 const taskList = JSON.parse(localStorage.getItem('taskList')) || [];
 const inputButtonBundle = document.getElementById('input-button-bundle');
-const todoh1 = document.getElementById('to-do-h1');
+const todoh1 = document.getElementById('to-do-h1'); 
 
 todoSection.style.padding = '30px';
 todoh1.style.fontSize = '2.5rem';
@@ -81,6 +81,7 @@ function renderTasks() {
         deleteButton.style.borderRadius = '5px';
         deleteButton.style.cursor = 'pointer';
         deleteButton.style.transition = 'background-color 0.3s ease';
+
         deleteButton.addEventListener('mouseenter', () => {
             deleteButton.style.backgroundColor = '#ff1c1c';
         });
@@ -113,6 +114,7 @@ addButton.style.borderRadius = '10px';
 addButton.style.fontSize = '1.5rem';
 addButton.style.cursor = 'pointer';
 addButton.style.transition = 'background-color 0.3s ease';
+
 addButton.addEventListener('mouseenter', () => {
     addButton.style.backgroundColor = '#555';
 });
@@ -156,19 +158,19 @@ function checkBackgroundColor(index) {
 
     switch (index) {
       case 0: // Pink
-          inputElement.placeholder = 'E o zi roz!';
+          inputElement.placeholder = 'Fa curat la pisica!';
           break;
       case 1: // Gold
-          inputElement.placeholder = 'Auriu, la fel ca succesul tău!';
+          inputElement.placeholder = 'Curata litiera!';
           break;
-      case 2: // Sky Blue
-          inputElement.placeholder = 'Cerul e senin!';
+          case 2: // Sky Blue
+          inputElement.placeholder = 'Perie pisica!';
           break;
       case 3: // Orange
-          inputElement.placeholder = 'Portocaliu vibrant!';
+          inputElement.placeholder = 'Joaca-te cu pisica!';
           break;
       case 4: // Light Green
-          inputElement.placeholder = 'Verde și proaspăt!';
+          inputElement.placeholder = 'Mergi la veterinar!';
           break;
       default:
           inputElement.placeholder = 'Ce ai de facut astazi?';
@@ -230,8 +232,18 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    const formObject = { name: nameValue, email: emailValue, message: messageValue };
+    let currentDate = new Date();
 
+    let year = currentDate.getFullYear();
+    let month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed, so add 1
+    let day = String(currentDate.getDate()).padStart(2, '0');
+    let hours = String(currentDate.getHours()).padStart(2, '0');
+    let minutes = String(currentDate.getMinutes()).padStart(2, '0');
+
+    // Format the date as DD/MM/YYYY - HH:MM
+    let formattedDate = `${day}/${month}/${year} - ${hours}:${minutes}`;
+    const formObject = { name: nameValue, email: emailValue, message: messageValue, date: formattedDate };
+    // console.log(formObject);
     try {
       const response = await fetch('/contact', {
         method: 'POST',

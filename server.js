@@ -25,14 +25,14 @@ app.get('/login', (req, res) => {
 });
 
 app.post('/contact', (req, res) => {
-  const {name, email, message} = req.body;
-  const newData = {name, email, message};
+  const {name, email, message, date} = req.body;
+  const newData = {name, email, message, date};
   const data = JSON.parse(fs.readFileSync('data.json'));
   data.push(newData);
 
   fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
 
-  console.log(`Nume: ${name}, Email: ${email}, Mesaj: ${message}`);
+  console.log(`Nume: ${name}, Email: ${email}, Mesaj: ${message}, Data: ${date}`);
   res.json({ message: 'Mesajul a fost primit' });
 });
 
@@ -48,7 +48,21 @@ app.post('/admin', (req, res) => {
     }
   }
   if (!access)
-    res.json(__dirname + '/public/login.html');
+    res.sendFile(__dirname + '/public/login.html');
+});
+
+/// stergere din json
+app.post('/delete', (req, res) => {
+  const index = req.body.index;
+  const data = JSON.parse(fs.readFileSync('data.json'));
+
+  if (index >= 0 && index < data.length) {
+      data.splice(index, 1);
+      fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
+      res.json({ message: 'Mesajul a fost primit' });
+  } else {
+      res.json({ message: 'Index invalid' });
+  }
 });
 
 app.get('/data', (req, res) => {
